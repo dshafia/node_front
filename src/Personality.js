@@ -5,12 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 function Personality() {
 
-    const [inputField , setInputField] = useState({
-        qs1: '',
-        qs2: ''
-    })
+    const [inputField , setInputField] = useState({})
 
-    const num = 0
+    let num = 0
 
     const navigate = useNavigate();
 
@@ -29,7 +26,6 @@ function Personality() {
     const inputsHandler = (e) =>{
         console.log(e.target.name, e.target.value)
         setInputField({...inputField, [e.target.name]: e.target.value})
-        console.log(inputField)
     } 
     
     const handleSubmit = () =>{
@@ -42,7 +38,16 @@ function Personality() {
             body: JSON.stringify(inputField)
             }).then(({ response }) => {
                 setRes(response)
-                navigate("/exp1")              
+                console.log(res)
+                if (num == 1){
+                    navigate("/CG")  
+                } 
+                else if(num == 2){
+                    navigate("/exp1")
+                }   
+                else{
+                    navigate("/exp2")
+                }        
             });
               
     }
@@ -66,7 +71,7 @@ function Personality() {
         <label for="N"> Neural</label><br/>
         <input type="checkbox" id="perqs2" name="perqs2"  onChange={inputsHandler} value={"disagree"}/>
         <label for="D"> Disagree</label><br/><br/>
-        <br/><input type="submit" value="Submit" onClick={handleSubmit}/>
+        <br/><input type="button" value="Submit" onClick={handleSubmit}/>
         </form>
         {res!== {} && <label>success</label>}
     </div>

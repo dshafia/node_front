@@ -5,12 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Demographics() {
 
 
-    const [inputField , setInputField] = useState({
-        gender: '',
-        age: '',
-        demo_cls: '',
-        address: ''
-    })
+    const [inputField , setInputField] = useState({})
 
     const navigate = useNavigate();
 

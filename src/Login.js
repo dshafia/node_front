@@ -5,11 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
 
-    const [inputField , setInputField] = useState({
-        fname: '',
-        lname: '',
-        cls: ''
-    })
+    const [inputField , setInputField] = useState({})
 
     const navigate = useNavigate();
 
