@@ -1,15 +1,15 @@
+import { useState } from 'react';
 import './Consent.css';
 import { useNavigate } from "react-router-dom";
 
 function Consent() {
 
   const navigate = useNavigate();
-
+  const [isChecked, setChecked] = useState(false)
   const handleSubmit = () =>{    
-            navigate("/demographic");           
-        };
-          
-
+    navigate("/demographic");           
+  };
+  
   return (
     <div className="form_div">
         <p1>The experimental method in psychology helps us learn more about how people think and why they behave the way they do. 
@@ -21,9 +21,10 @@ function Consent() {
         <br/>
         <br/>
         <form>
-            <input type="checkbox" id="consent" name="consent" value="consent" required/>
+            <input type="checkbox" id="consent" name="consent" value={isChecked} onClick={() => setChecked(!isChecked)} required/>
             <label>I Acknowledge That I Have Read And Understand The Terms</label>
-            <br/><input type="button" value="Next" onClick={handleSubmit}/>
+            <br/>
+            <input type="button" value="Next" onClick={handleSubmit} disabled = {!isChecked}/>
         </form>
     </div>
   );

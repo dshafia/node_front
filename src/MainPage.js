@@ -1,4 +1,5 @@
-import './App.css';
+import './App';
+import AdminApp from './AdminApp';
 import Login from './Users/Login';
 import Header from './Header';
 import Consent from './Users/Consent';
@@ -8,11 +9,7 @@ import CG from './Users/CG';
 import Exp1 from './Users/exp1';
 import Exp2 from './Users/exp2';
 import DeepBrief from './Users/deepbief';
-import AdminSignup from './Admin/AdminSignup'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import AdminLogin from './Admin/AdminLogin';
-import AdminHome from './Admin/AdminHome';
-
 
 function App() {
   return (
@@ -20,7 +17,7 @@ function App() {
       <Header/>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
           <Route path="/consent" element={<Consent />} />
           <Route path="/demographic" element={<Demographics />} />
           <Route path="/personality" element={<Personality />} />
@@ -28,9 +25,8 @@ function App() {
           <Route path="/exp1" element={<Exp1 />} />
           <Route path="/exp2" element={<Exp2 />} />
           <Route path="/deepbreif" element={<DeepBrief />} />
-          <Route path="/adminSignup" element={<AdminSignup />} />
-          <Route path="/adminLogin" element={<AdminLogin />} />
-          <Route path="/adminHome" element={<AdminHome />} />
+          <Route path="/userLogin" element={<App />} />
+          <Route path="/adminLogin" element={<AdminApp />} />
         </Routes>
       </Router>
     </div>

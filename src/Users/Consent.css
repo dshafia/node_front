@@ -65,7 +65,12 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
+  
   background-color: #e6a210;
+}
+
+input[type=submit]:disabled:hover {
+  background-color: gray;
 }
 
 .form_div{

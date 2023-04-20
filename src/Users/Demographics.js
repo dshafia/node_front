@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Demographics() {
 
 
-    const [inputField , setInputField] = useState({})
+    const [inputField , setInputField] = useState({"user":localStorage["user"]})
 
     const navigate = useNavigate();
 

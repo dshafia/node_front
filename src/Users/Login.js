@@ -24,8 +24,11 @@ function Login() {
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(inputField)
-            }).then(({ response }) => {
-                setRes(response)    
+            }).then((response) => response.json())
+                .then((data) => {
+                setRes(data)  
+                console.log("responsee ", data)
+                localStorage.setItem('user', data.loggedin_user)
                 navigate("/consent");           
             });
               
@@ -34,11 +37,11 @@ function Login() {
   return (
     <div className="form_div">
         <form action="/" id="loginForm" method="POST">
-        <label for="fname">First name:</label>
+        <label htmlFor="fname">First name:</label>
         <input type="text" id="fname" name="fname" placeholder="Enter your Firstname..." required onChange={inputsHandler} value={inputField.fname}/><br/><br/>
-        <label for="lname">Last name:</label>
+        <label htmlFor="lname">Last name:</label>
         <input type="text" id="lname" name="lname" placeholder="Enter your Lastname..." required onChange={inputsHandler} value={inputField.lname}/><br/><br/>
-        <label for="class">Class</label>
+        <label htmlFor="class">Class</label>
             <select id="class" name="cls" onChange={inputsHandler} value={inputField.cls}>
             <option value="none">None of the above</option>
             <option value="CS1">CS01</option>
@@ -47,7 +50,9 @@ function Login() {
             </select>
         <br/><input type="button" value="Submit" onClick={handleSubmit}/>
         </form>
-        {res!== {} && <label>success</label>}
+        <br/>
+        <a href='/adminSignup'> Click here for Admin Signup Page </a>
+        {/* {res!== {} && <label>success</label>} */}
       
     </div>
   );

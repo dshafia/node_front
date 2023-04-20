@@ -54,7 +54,7 @@ function Personality() {
         
 
   return (
-    <div class = "form_div">
+    <div className = "form_div">
         <form  id="personalityform" method="POST">
         <label for="per_qs1" >I like being in leadership positions.</label><br/>
         <input type="checkbox" id="perqs1" name="perqs1" onChange={inputsHandler} value={"agree"}/>
