@@ -16,18 +16,19 @@ function AdminHome() {
       });
   }, [])
 
-  const [formValues, setFormValues] = useState([{ name: ""}])
+  const [formValues, setFormValues] = useState([{question : "Q0", name: ""}])
   const userName = localStorage["admin"] ? localStorage["admin"] : ""
-  const [category , setCategory] = useState("")
+  const [category , setCategory] = useState("EXP1")
 
     let handleChange = (i, e) => {
         let newFormValues = [...formValues];
         newFormValues[i][e.target.name] = e.target.value;
+        newFormValues[i]["question"] = "Q" + i.toString()
         setFormValues(newFormValues);
       }
     
     let addFormFields = () => {
-        setFormValues([...formValues, { name: ""}])
+        setFormValues([...formValues, {name: ""}])
       }
     
     let removeFormFields = (i) => {
