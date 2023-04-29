@@ -26,12 +26,11 @@ function AdminLogin() {
                     setError("Admin doesn't exist! Please Sign up first")
                 }
                 else if(data["status"] === 200){
-                    navigate()
+                    navigate('/adminHome')
                 }          
             });
               
     }
-console.log("userName", userName, localStorage["admin"])
   return (
     <div className="form_div">
         <form action="/" id="loginForm" method="POST">
