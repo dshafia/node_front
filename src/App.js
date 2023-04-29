@@ -12,6 +12,7 @@ import AdminSignup from './Admin/AdminSignup'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminLogin from './Admin/AdminLogin';
 import AdminHome from './Admin/AdminHome';
+import Gameone from './Users/gameone';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/CG" element={<CG />} />
           <Route path="/exp1" element={<Exp1 />} />
           <Route path="/exp2" element={<Exp2 />} />
+          <Route path="/gameone" element={<Gameone />} />
           <Route path="/deepbreif" element={<DeepBrief />} />
           <Route path="/adminSignup" element={<AdminSignup />} />
           <Route path="/adminLogin" element={<AdminLogin />} />

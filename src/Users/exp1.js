@@ -34,7 +34,7 @@ function Exp1() {
   return (
     <div className="form_div">
         <form id="demographicForm" method="POST">
-        <label for="per_qs1">how did you feel the experiment was ?</label><br/>
+        <label for="per_qs1">How did you feel the experiment was ?</label><br/>
         <input type="checkbox" id="exp1qs1" name="exp1qs1" value="agree" onChange={inputsHandler}/>
         <label for="A"> Agree</label><br/>
         <input type="checkbox" id="exp1qs1" name="exp1qs1" value="neutral" onChange={inputsHandler}/>

@@ -51,9 +51,6 @@ function Login() {
         <br/><input type="button" value="Submit" onClick={handleSubmit}/>
         </form>
         <br/>
-        <a href='/adminSignup'> Click here for Admin Signup Page </a>
-        {/* {res!== {} && <label>success</label>} */}
-      
     </div>
   );
 }
