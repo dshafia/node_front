@@ -15,7 +15,7 @@ import AdminHome from './Admin/AdminHome';
 import Gameone from './Users/gameone';
 import Moodsurvey from './Users/Moodsurvey';
 import Resilience from './Users/resiliencepage';
-
+import Gametwo from './Users/Gametwo/Gametwo';
 
 function App() {
   return (
