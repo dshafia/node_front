@@ -15,7 +15,7 @@ import AdminHome from './Admin/AdminHome';
 import Gameone from './Users/gameone';
 import Moodsurvey from './Users/Moodsurvey';
 import Resilience from './Users/resiliencepage';
-
+import Gametwo from './Users/Gametwo/Gametwo';
 
 function App() {
   return (
@@ -28,7 +28,8 @@ function App() {
           <Route path="/demographic" element={<Demographics />} />
           <Route path="/personality" element={<Personality />} />
           <Route path="/moodsurvey" element={<Moodsurvey />} />
-          <Route path="/CG" element={<CG />} />
+          {/* <Route path="/CG" element={<CG />} /> */}
+          <Route path="/CG" element={<Gametwo />} />
           <Route path="/exp1" element={<Exp1 />} />
           <Route path="/exp2" element={<Exp2 />} />
           <Route path="/resiliencesurvey" element={<Resilience />} />
