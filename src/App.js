@@ -12,7 +12,9 @@ import AdminSignup from './Admin/AdminSignup'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminLogin from './Admin/AdminLogin';
 import AdminHome from './Admin/AdminHome';
-import Gametwo from './Users/Gametwo/Gametwo';
+import Gameone from './Users/gameone';
+import Moodsurvey from './Users/Moodsurvey';
+import Resilience from './Users/resiliencepage';
 
 
 function App() {
@@ -25,10 +27,13 @@ function App() {
           <Route path="/consent" element={<Consent />} />
           <Route path="/demographic" element={<Demographics />} />
           <Route path="/personality" element={<Personality />} />
+          <Route path="/moodsurvey" element={<Moodsurvey />} />
           {/* <Route path="/CG" element={<CG />} /> */}
           <Route path="/CG" element={<Gametwo />} />
           <Route path="/exp1" element={<Exp1 />} />
           <Route path="/exp2" element={<Exp2 />} />
+          <Route path="/resiliencesurvey" element={<Resilience />} />
+          <Route path="/gameone" element={<Gameone />} />
           <Route path="/deepbreif" element={<DeepBrief />} />
           <Route path="/adminSignup" element={<AdminSignup />} />
           <Route path="/adminLogin" element={<AdminLogin />} />
