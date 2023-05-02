@@ -16,6 +16,10 @@ import Gameone from './Users/gameone';
 import Moodsurvey from './Users/Moodsurvey';
 import Resilience from './Users/resiliencepage';
 import Gametwo from './Users/Gametwo/Gametwo';
+import ControlGroup from './Users/MessageScreens/ControlGroup';
+import ExpGroupOne from './Users/MessageScreens/ExpGroupOne';
+import ExpGroupTwo from './Users/MessageScreens/ExpGroupTwo';
+import ResilienceTwo from './Users/resiliencepagetwo';
 
 function App() {
   return (
@@ -29,15 +33,21 @@ function App() {
           <Route path="/personality" element={<Personality />} />
           <Route path="/moodsurvey" element={<Moodsurvey />} />
           {/* <Route path="/CG" element={<CG />} /> */}
-          <Route path="/CG" element={<Gametwo />} />
-          <Route path="/exp1" element={<Exp1 />} />
-          <Route path="/exp2" element={<Exp2 />} />
+          <Route path="/cg" element={<Gametwo />} />
+          {/* <Route path="/exp1" element={<Exp1 />} /> */}
+          {/* <Route path="/exp2" element={<Exp2 />} /> */}
+          <Route path="/exp1" element={<Gametwo />} />
+          <Route path="/exp2" element={<Gametwo />} />
           <Route path="/resiliencesurvey" element={<Resilience />} />
+          <Route path="/survey" element={<ResilienceTwo />} />
           <Route path="/gameone" element={<Gameone />} />
           <Route path="/deepbreif" element={<DeepBrief />} />
           <Route path="/adminSignup" element={<AdminSignup />} />
           <Route path="/adminLogin" element={<AdminLogin />} />
           <Route path="/adminHome" element={<AdminHome />} />
+          <Route path="/cgInfo" element={<ControlGroup />} />
+          <Route path="/exponeInfo" element={<ExpGroupOne />} />
+          <Route path="/exptwoInfo" element={<ExpGroupTwo />} />
         </Routes>
       </Router>
     </div>

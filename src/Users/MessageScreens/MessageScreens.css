@@ -1,0 +1,55 @@
+.infocontainer {
+    height: 28rem;
+    /* margin-top: -1rem; */
+    background-color: whitesmoke;
+    /* margin: 0 !important; */
+}
+
+.infocard {
+    /* padding-bottom: 20rem; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    background-color: rgb(227, 227, 227);
+    /* display: flex;
+    flex-direction: row; */
+    margin-top: 2rem !important;
+    width: 60%;
+    height: 80%;
+    margin: auto;
+}
+
+.infocontent {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.inforow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2.5rem;
+}
+
+.infos {
+    margin: auto;
+    width: 50%;
+    height: 10rem;
+    text-align: justify;
+    justify-content: space-evenly;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.infoimg {
+    object-fit: cover;
+    height: auto;
+    width: 10rem;
+    margin-left: 3rem;
+}
+
+.infotwoimg {
+    object-fit: cover;
+    height: auto;
+    width: 12rem;
+    margin-left: 2.5rem;
+}

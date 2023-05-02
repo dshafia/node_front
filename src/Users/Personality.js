@@ -1,5 +1,5 @@
 import './Personality.css';
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -13,6 +13,10 @@ function Personality() {
 
     const [res, setRes] = useState({}) 
     const [label, setLabel] = useState(false) 
+
+    useEffect(() => {
+        localStorage.setItem("previourUrl", window.location.pathname);
+    }, [])
 
     function generateRandom(min = 1, max = 4) {
         let difference = max - min;
@@ -40,13 +44,16 @@ function Personality() {
                 setRes(response)
                 console.log(res)
                 if (num == 1){
-                    navigate("/CG")  
+                    // navigate("/CG")  
+                    navigate("/cgInfo")
                 } 
                 else if(num == 2){
-                    navigate("/exp1")
+                    // navigate("/exp1")
+                    navigate("/exponeInfo")
                 }   
                 else{
-                    navigate("/exp2")
+                    // navigate("/exp2")
+                    navigate("/exptwoInfo")
                 }        
             });
               

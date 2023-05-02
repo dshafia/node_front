@@ -6,7 +6,8 @@ function DeepBrief() {
     const navigate = useNavigate();
   
     const handleSubmit = () =>{    
-              navigate("/");           
+              // navigate("/");   
+              alert('Thank you for taking the survey!')        
           };
             
   

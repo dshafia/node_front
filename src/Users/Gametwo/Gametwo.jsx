@@ -14,19 +14,27 @@ import { Link } from "react-router-dom";
 
 const GAME_DURATION = 1000 * 30; // 30 seconds
 
-// const lettersList = ['M', 'A', 'E', 'P', 'L', 'F', 'O'];
+console.log('pathname', window.location.pathname);
 
 const initialState = {
   bench: shuffle(LETTERS),
   [WORDS.WORDS]: [],
   gameState: GAME_STATE.READY,
   timeLeft: 0,
+  pathname: window.location.pathname,
 };
 
 class Gametwo extends React.Component {
   state = initialState;
 
+  componentDidMount() {
+    this.setState({
+      previousPage: localStorage.getItem("previourUrl")
+    })
+  }
+
   startGame = () => {
+
     this.currentDeadline = Date.now() + GAME_DURATION;
 
     this.setState(
@@ -34,6 +42,7 @@ class Gametwo extends React.Component {
         bench: shuffle(shuffle(WORDLETS)[0]),
         gameState: GAME_STATE.PLAYING,
         timeLeft: getTimeLeft(this.currentDeadline),
+        // previousPage: prevPage,
       },
       this.gameLoop
     );
@@ -93,7 +102,7 @@ class Gametwo extends React.Component {
     return (
       // <div className='main-cnt'>
         <div className='game-container'>
-          <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
+          <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} previousPage={this.state.previousPage} />
           {this.state.gameState !== GAME_STATE.PLAYING && (
             <Modal
               startGame={this.startGame}
@@ -101,6 +110,7 @@ class Gametwo extends React.Component {
               timeLeft={timeLeft}
               gameState={gameState}
               groups={groups}
+              pathname={this.state.pathname}
             />
           )}
           <DragDropContext onDragEnd={this.onDragEnd}>
@@ -116,7 +126,11 @@ class Gametwo extends React.Component {
             </div>
           </DragDropContext>
           <div className="gameone-btn">
-          <Link to="/deepbreif" className="gamebtn-text">End game</Link>
+            {this.state.previousPage == '/resiliencesurvey' ? (
+              <Link to="/survey" className="gamebtn-text">End game</Link>
+            ) : (
+              <Link to="/resiliencesurvey" className="gamebtn-text">End game</Link>
+            )}
         </div>
         </div>
       // </div>
